@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.MapFragment" />
+
+    <RelativeLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="65dp"
+        android:elevation="10dp"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/magnify"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/magnify"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColorHint="#A4A4A4"
+            android:textColor="#000"
+            android:background="@null"
+            android:hint="Enter Address, City or Zip Code"
+            android:imeOptions="actionSearch"
+            android:inputType="textFilter"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/hourBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/searchBar"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="10dp"
+        android:background="#fff">
+
+        <EditText
+            android:id="@+id/hour_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:textSize="16sp"
+            android:textColorHint="#A4A4A4"
+            android:textColor="#000"
+            android:background="@null"
+            android:hint="Hour"
+            android:inputType="textFilter"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/minuteBar"
+        android:layout_toRightOf="@id/hourBar"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/searchBar"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        android:elevation="10dp"
+        android:background="#fff">
+
+        <EditText
+            android:id="@+id/min_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:textSize="16sp"
+            android:textColorHint="#A4A4A4"
+            android:textColor="#000"
+            android:background="@null"
+            android:hint="Minutes"
+            android:inputType="textFilter"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/alarmButton"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/searchBar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/minuteBar"
+        android:elevation="10dp"
+        android:hint="@string/start_alarm"
+        android:text="Alarm"
+        android:onClick="createAlarm"/>
+
+</RelativeLayout>

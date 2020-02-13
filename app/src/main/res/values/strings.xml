@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">bus</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Enter Address</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minutes</string>
+    <string name="start_alarm">Start Alarm</string>
+</resources>
