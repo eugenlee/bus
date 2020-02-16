@@ -101,8 +101,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(mapIntent);
             }
         }
-
-
     }
 
     @Override
@@ -120,7 +118,12 @@ public class MainActivity extends AppCompatActivity
 
         if (eh.length() != 0 && em.length() != 0) {
             h = Integer.parseInt(eh.getText().toString());
-            m = Integer.parseInt(em.getText().toString());
+            m = Integer.parseInt(em.getText().toString()) - 15;
+            if (m < 0) {
+                m += 60;
+                h = h == 0 ? 23 : h-1;
+            }
+
             Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
                     .putExtra(AlarmClock.EXTRA_HOUR, h)
                     .putExtra(AlarmClock.EXTRA_MINUTES, m)
@@ -131,8 +134,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         }
-        else Toast.makeText(this, "Please input time", Toast.LENGTH_SHORT).show();
-
+        else Toast.makeText(this, "Please input in military time", Toast.LENGTH_SHORT).show();
     }
 
     @Override

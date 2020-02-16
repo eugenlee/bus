@@ -73,7 +73,9 @@
             android:textColor="#000"
             android:background="@null"
             android:hint="Hour"
-            android:inputType="textFilter"
+            android:inputType="time"
+            android:digits="1234567890"
+            android:imeOptions="actionPrevious"
             />
     </RelativeLayout>
 
@@ -99,7 +101,8 @@
             android:textColor="#000"
             android:background="@null"
             android:hint="Minutes"
-            android:inputType="textFilter"
+            android:inputType="time"
+            android:imeOptions="actionNext"
             />
     </RelativeLayout>
 
@@ -114,6 +117,7 @@
         android:elevation="10dp"
         android:hint="@string/start_alarm"
         android:text="Alarm"
-        android:onClick="createAlarm"/>
+        android:onClick="createAlarm"
+        />
 
 </RelativeLayout>
